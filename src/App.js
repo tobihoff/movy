@@ -1,10 +1,10 @@
 import React from "react";
-import Header from "./components/GlobalStyles";
+import GlobalStyles from "./components/GlobalStyles";
 
 function App() {
   return (
     <>
-      <Header>Logo</Header>
+      <GlobalStyles></GlobalStyles>
       <main>Movies</main>
     </>
   );
