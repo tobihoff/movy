@@ -7,16 +7,21 @@ import SearchButton from "./SearchButton";
 const AppBar = styled.header`
   display: flex;
   justify-content: space-between;
-  background-color: #41b3a3;
+  background-color: ${props => (props.active ? "white" : "#41b3a3")};
   height: 50px;
 `;
 
 export default function Header() {
+  const [showSearch, setShowSearch] = React.useState(false);
+
   return (
-    <AppBar>
-      <Logo text="Movy" />
-      <Search placeholder="Search for great movies" />
-      <SearchButton text="Search" />
+    <AppBar active={showSearch}>
+      {!showSearch && <Logo text="Movy" />}
+      {showSearch && <Search />}
+      <SearchButton
+        active={showSearch}
+        onClick={() => setShowSearch(!showSearch)}
+      />
     </AppBar>
   );
 }
