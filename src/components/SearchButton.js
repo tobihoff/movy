@@ -2,6 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import search from "../components/assets/search.svg";
 import cancel from "../components/assets/cancel.svg";
+//import { keyframes } from "@emotion/core";
 
 const SearchButtonStyle = styled.button`
   height: 100%;
@@ -12,14 +13,15 @@ const SearchButtonStyle = styled.button`
 `;
 
 const Icon = styled.img`
-  height: 70%;
+  margin: 4px;
   margin-right: 5px;
+  fill: white;
 `;
 
-export default function() {
+export default function({ active, onClick }) {
   return (
-    <SearchButtonStyle>
-      <Icon src={cancel} alt="Search Icon" />
+    <SearchButtonStyle onClick={onClick}>
+      <Icon active={active} src={active ? cancel : search} />
     </SearchButtonStyle>
   );
 }
