@@ -2,7 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 
 const LogoStyle = styled.h1`
-  color: white;
+  color: #f2e52e;
   margin: 0;
   font-size: 40px;
   margin-left: 10px;
