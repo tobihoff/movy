@@ -15,7 +15,6 @@ const SearchButtonStyle = styled.button`
 const Icon = styled.img`
   margin: 4px;
   margin-right: 5px;
-  fill: white;
 `;
 
 export default function({ active, onClick }) {
