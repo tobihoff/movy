@@ -4,12 +4,17 @@ import Header from "./components/Header";
 import Movies from "./components/Movies";
 
 function App() {
+  const [movieSearchValue, setMovieSearchValue] = React.useState("T");
+
   return (
     <>
       <GlobalStyles />
-      <Header />
+      <Header
+        searchValue={movieSearchValue}
+        onSearchValueChange={searchValue => setMovieSearchValue(searchValue)}
+      />
       <main>
-        <Movies />
+        <Movies searchValue={movieSearchValue} />
       </main>
     </>
   );

@@ -12,6 +12,23 @@ const SearchBar = styled.input`
   }
 `;
 
-export default function Search({ placeholder }) {
-  return <SearchBar placeholder={placeholder} />;
+export default function Search({ value, onChange }) {
+  function upperCaseFirstChar(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
+  function handleChange(event) {
+    const newSearchValue = upperCaseFirstChar(event.target.value);
+    onChange(newSearchValue);
+  }
+
+  return (
+    <SearchBar
+      placeholder="Find me..."
+      value={value}
+      onChange={event => {
+        handleChange(event);
+      }}
+    />
+  );
 }

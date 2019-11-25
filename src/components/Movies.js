@@ -14,27 +14,33 @@ const Poster = styled.img`
   padding: 10px;
 `;
 
-export default function Movies() {
+export default function Movies({ searchValue }) {
   const [movies, setMovies] = React.useState([]);
+  const [loading, setLoading] = React.useState(false);
 
   console.log(movies);
   async function refreshMovies() {
-    const discoverMovies = await getDiscoverMovies();
-    setMovies(discoverMovies);
+    setLoading(true);
+    const discoverMovies = await getDiscoverMovies(searchValue);
+    setLoading(false);
+    setMovies(discoverMovies || []);
   }
   React.useEffect(() => {
     refreshMovies();
-  }, []);
+  }, [searchValue]);
 
   return (
-    <List>
-      {movies.map(movie => (
-        <Poster
-          key={movie.id}
-          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-          alt={movie.title}
-        />
-      ))}
-    </List>
+    <>
+      {loading && <div>Loading</div>}
+      <List>
+        {movies.map(movie => (
+          <Poster
+            key={movie.id}
+            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+            alt={movie.title}
+          />
+        ))}
+      </List>
+    </>
   );
 }
