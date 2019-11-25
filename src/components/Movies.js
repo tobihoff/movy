@@ -22,6 +22,7 @@ export default function Movies({ searchValue }) {
 
   console.log(movies);
   async function refreshMovies() {
+    setMovies([]);
     setLoading(true);
     const discoverMovies = await getDiscoverMovies(searchValue);
     setLoading(false);
