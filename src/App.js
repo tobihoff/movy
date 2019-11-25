@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Movies from "./components/Movies";
 
 function App() {
-  const [movieSearchValue, setMovieSearchValue] = React.useState("T");
+  const [movieSearchValue, setMovieSearchValue] = React.useState("Marvel");
 
   return (
     <>
