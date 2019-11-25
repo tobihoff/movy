@@ -11,13 +11,15 @@ const AppBar = styled.header`
   height: 50px;
 `;
 
-export default function Header() {
+export default function Header({ searchValue, onSearchValueChange }) {
   const [showSearch, setShowSearch] = React.useState(false);
 
   return (
     <AppBar active={showSearch}>
       {!showSearch && <Logo text="Movy" />}
-      {showSearch && <Search />}
+      {showSearch && (
+        <Search value={searchValue} onChange={onSearchValueChange} />
+      )}
       <SearchButton
         active={showSearch}
         onClick={() => setShowSearch(!showSearch)}
