@@ -6,7 +6,7 @@ const LogoStyle = styled.h1`
   font-size: 40px;
   margin-left: 10px;
   letter-spacing: 3px;
-  color: ${props => (props.isYellow ? "#f2e52e" : "blue")};
+  color: ${props => (props.isYellow ? props => props.theme.third : "blue")};
   border: ${props => (props.isNoneBorder ? "none" : "2px solid white")};
 `;
 
