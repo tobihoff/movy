@@ -7,7 +7,8 @@ import SearchButton from "./SearchButton";
 const AppBar = styled.header`
   display: flex;
   justify-content: space-between;
-  background-color: ${props => (props.active ? "white" : "#41b3a3")};
+  background-color: ${props =>
+    props.active ? "white" : props => props.theme.secondary};
   height: 50px;
 `;
 
