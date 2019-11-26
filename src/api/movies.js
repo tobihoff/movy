@@ -3,7 +3,7 @@ export async function getDiscoverMovies(query) {
     `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&query=${query}`
   );
   const data = await response.json();
-  await waitFor(500);
+  await waitFor(100);
   return data.results;
 }
 
