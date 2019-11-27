@@ -30,5 +30,5 @@ export default function Logo({ text }) {
 }
 
 Logo.propTypes = {
-  text: PropTypes.string.isRequired
+  text: PropTypes.string
 };

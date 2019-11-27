@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import Logo from "./Logo";
 import Search from "./Search";
 import SearchButton from "./SearchButton";
+import PropTypes from "prop-types";
 
 const AppBar = styled.header`
   display: flex;
@@ -28,3 +29,8 @@ export default function Header({ searchValue, onSearchValueChange }) {
     </AppBar>
   );
 }
+
+Header.propTypes = {
+  searchValue: PropTypes.string,
+  onSearchValueChange: PropTypes.func
+};
