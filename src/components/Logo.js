@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
+import PropTypes from "prop-types";
 
 const LogoStyle = styled.h1`
   margin: 0;
@@ -27,3 +28,7 @@ export default function Logo({ text }) {
     </LogoStyle>
   );
 }
+
+Logo.propTypes = {
+  text: PropTypes.string.isRequired
+};
