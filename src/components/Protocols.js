@@ -1,6 +1,6 @@
 import React from "react";
-import Protocol from "./Protocol";
-import { getProtocols } from "../src/api/protocols";
+import Protocol from "../components/Protocol";
+import { getProtocols } from "../api/protocols";
 
 export default function() {
   const protocols = getProtocols();
