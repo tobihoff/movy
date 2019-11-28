@@ -1,6 +1,6 @@
 import React from "react";
-import ProtocolForm from "./components/ProtocolForm";
-import Protocols from "./Protocols";
+import ProtocolForm from "../src/components/ProtocolForm";
+import Protocols from "../src/components/Protocols";
 
 function Form() {
   const [showForm, setShowForm] = React.useState(true);
